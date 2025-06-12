@@ -1,12 +1,36 @@
-# React + Vite
+# Zentrox - Gemini AI Chatbot 🤖✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zentrox is a lightweight AI-powered chatbot built using **React.js** and **Google Gemini API**. This chatbot allows users to send text prompts and receive AI-generated responses seamlessly.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
+[View on Netlify](https://your-netlify-link.netlify.app) <!-- Replace with your actual Netlify link -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- Google Gemini API (v1beta) Integration
+- React.js Functional Components
+- Chat-style UI with User & Bot messages
+- Re-generate Bot response feature
+- File Upload Support (Multer-ready for backend expansion)
+- Toast Notifications using `notistack`
+- Clean and Simple Design
+- Fully Client-Side - No custom backend required for API calls
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React.js**
+- **Axios** for API requests
+- **Vite.js** (Development Server)
+- **Google Gemini API**
+- **Material-UI / Tailwind (if used)**
+- **Notistack (Snackbar notifications)**
+
+## 🖼️ Preview
+
+![Zentrox Chatbot Screenshot](./preview.png) <!-- Optional, replace with your app screenshot -->
+
+## 🔧 Setup Instructions
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/your-username/zentrox-gemini-chat.git
+cd zentrox-gemini-chat
