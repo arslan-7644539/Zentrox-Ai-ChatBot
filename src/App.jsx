@@ -222,67 +222,69 @@ const App = () => {
     }
   };
   const chatSection = (
-    <div className="p-4 bg-gray-800 flex items-center space-x-2 mb-5 mx-auto w-4xl rounded-4xl">
+    <div className="p-2 sm:p-4 bg-gray-800 flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 mb-3 sm:mb-5 mx-auto w-full max-w-full sm:max-w-4xl rounded-xl sm:rounded-4xl overflow-hidden">
       <textarea
         ref={textareaRef}
         value={textInput}
         onChange={(e) => setTextInput(e.target.value)}
         onKeyDown={handleKeyPress}
         placeholder="Type your message..."
-        className="flex-1 resize-none bg-gray-700  px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-4xl"
+        className="w-full sm:flex-1 resize-none bg-gray-700 px-3 sm:px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-xl sm:rounded-4xl"
         rows={1}
         maxLength={1000}
       />
-      {selectedFile && previewUrl && (
-        <div className="relative">
-          <img
-            src={previewUrl}
-            alt="Preview"
-            className="w-10 h-10 object-cover rounded-lg"
-          />
-          <button
-            onClick={removeFile}
-            className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full p-1"
-            title="Remove"
-          >
-            <FiX />
-          </button>
-        </div>
-      )}
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept="image/*"
-        className="hidden"
-        onChange={handleFileChange}
-      />
-      <button
-        onClick={() => fileInputRef.current.click()}
-        className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors"
-        title="Attach Image"
-      >
-        <FiImage />
-      </button>
-      <button
-        onClick={handleSend}
-        disabled={loading}
-        className="p-2 bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors disabled:opacity-50"
-        title="Send"
-      >
-        <FiSend />
-      </button>
+      <div className="flex items-center space-x-2 w-full sm:w-auto justify-end">
+        {selectedFile && previewUrl && (
+          <div className="relative">
+            <img
+              src={previewUrl}
+              alt="Preview"
+              className="w-10 h-10 object-cover rounded-lg"
+            />
+            <button
+              onClick={removeFile}
+              className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full p-1"
+              title="Remove"
+            >
+              <FiX />
+            </button>
+          </div>
+        )}
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={handleFileChange}
+        />
+        <button
+          onClick={() => fileInputRef.current.click()}
+          className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition-colors flex-shrink-0"
+          title="Attach Image"
+        >
+          <FiImage />
+        </button>
+        <button
+          onClick={handleSend}
+          disabled={loading}
+          className="p-2 bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors disabled:opacity-50 flex-shrink-0"
+          title="Send"
+        >
+          <FiSend />
+        </button>
+      </div>
     </div>
   );
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900 text-white">
+    <div className="flex flex-col min-h-screen w-screen max-w-full overflow-hidden bg-gray-900 text-white">
       {/* Header */}
-      <div className="sticky top-0 z-10">
+      <div className="sticky top-0 z-10 w-full">
         <Header />
       </div>
 
       {/* Chat Box */}
-      <div className="flex-1 overflow-y-auto px-2 sm:px-4 md:px-6 lg:px-8">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden w-full px-2 sm:px-4 md:px-6 lg:px-8">
         <ChatBox
           copiedIndex={copiedIndex}
           chat={chat}
@@ -294,7 +296,7 @@ const App = () => {
       </div>
 
       {/* User Input Section (Textarea etc) */}
-      <div className="p-2 sm:p-4 md:p-6 lg:p-8">{chatSection}</div>
+      <div className="sticky bottom-0 w-full p-2 sm:p-4 md:p-6 lg:p-8 bg-gray-900/95 backdrop-blur-sm border-t border-gray-800">{chatSection}</div>
     </div>
   );
 };
