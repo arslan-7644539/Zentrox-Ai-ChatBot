@@ -265,6 +265,7 @@ const App = () => {
           <FiImage />
         </button>
         <button
+          onTouchStart={handleSend}
           onClick={handleSend}
           disabled={loading}
           className="p-2 bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors disabled:opacity-50 flex-shrink-0"
@@ -296,7 +297,9 @@ const App = () => {
       </div>
 
       {/* User Input Section (Textarea etc) */}
-      <div className="sticky bottom-0 w-full p-2 sm:p-4 md:p-6 lg:p-8 bg-gray-900/95 backdrop-blur-sm border-t border-gray-800">{chatSection}</div>
+      <div className="sticky bottom-0 w-full p-2 sm:p-4 md:p-6 lg:p-8 bg-gray-900/95 backdrop-blur-sm border-t border-gray-800">
+        {chatSection}
+      </div>
     </div>
   );
 };
