@@ -3,7 +3,7 @@
 Zentrox is a lightweight AI-powered chatbot built using **React.js** and **Google Gemini API**. This chatbot allows users to send text prompts and receive AI-generated responses seamlessly.
 
 ## 🔗 Live Demo
-[View on Netlify](https://your-netlify-link.netlify.app) <!-- Replace with your actual Netlify link -->
+[View on Netlify](https://zentrox-ai-chatbot.netlify.app/) <!-- Replace with your actual Netlify link -->
 
 ## 🚀 Features
 - Google Gemini API (v1beta) Integration
